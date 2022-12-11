@@ -1,4 +1,10 @@
 import { useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import WeatherContainer from '../components/WeatherContainer';
+import AirContainer from '../components/AirContainer';
+import TodayTemperature from '../components/TodayTemperature';
+import TomorrowWeather from '../components/TomorrowWeather';
+
 //import getWeather from '../services/WeatherAPI';
 export default function Index() {
   // useEffect(() => {
@@ -10,103 +16,23 @@ export default function Index() {
   return (
     <div className="md:grid md:grid-cols-3 gap-2 h-screen ">
       <div className="md:col-span-2 p-4">
-        <header className="flex justify-between">
+        <header className="md:flex justify-between">
           <div>
             <h1 className="font-semibold text-2xl">08/12/2022</h1>
             <h2 className="text-gray-600">Quinta-feira</h2>
           </div>
           <input type="text" className="bg-gray-100 rounded-lg" />
         </header>
-        <div className="grid grid-cols-2 gap-3 text-white mt-8">
-          <div className="bg-indigo-900 rounded-xl p-4">
-            <h1>Tempo Agora</h1>
-            <div>
-              <h1 className="font-semibold text-2xl">22°C</h1>
-              <h2>Parcialmente nublado</h2>
-            </div>
-            <div className="grid grid-cols-3 gap-3 text-center">
-              <div className=" bg-slate-300 rounded-xl">
-                <h1>Pressão</h1>
-                <h2>800mb</h2>
-              </div>
-              <div className=" bg-slate-300 rounded-xl">
-                <h1>Visibilidade</h1>
-                <h2>4.3 km</h2>
-              </div>
-              <div className=" bg-slate-300 rounded-xl">
-                <h1>Umidade</h1>
-                <h2>87%</h2>
-              </div>
-            </div>
-          </div>
-          <div className="bg-indigo-900 rounded-xl p-4">
-            <div>
-              <h1>Qualidade do Ar</h1>
-              <h2>Poluente principal: PM 2.5</h2>
-            </div>
-            <div>
-              <h1 className="font-semibold text-2xl">
-                390 <span>AQI</span>
-              </h1>
-            </div>
-          </div>
+        <div className="md:grid md:grid-cols-2 gap-3 text-white mt-8">
+          <WeatherContainer></WeatherContainer>
+          <AirContainer></AirContainer>
         </div>
-        <div className="mt-8 grid grid-cols-3 gap-3">
-          <div className="col-span-2">
-            <h1 className="font-semibold text-2xl mb-8">
-              Como está a temperatura hoje?
-            </h1>
-            <div className="text-center grid grid-cols-4 mt-4">
-              <div className="border-slate-300 border-r">
-                <img
-                  src=" http://openweathermap.org/img/wn/10d@2x.png"
-                  alt=""
-                  className="m-auto"
-                />
-                <h1 className="font-semibold text-lg  mt-4">22°C</h1>
-                <h2 className="text-gray-600">Manhã</h2>
-              </div>
-              <div className="border-slate-300 border-r">
-                <img
-                  src=" http://openweathermap.org/img/wn/10d@2x.png"
-                  alt=""
-                  className="m-auto"
-                />
-                <h1 className="font-semibold text-lg  mt-4">22°C</h1>
-                <h2 className="text-gray-600">Tarde</h2>
-              </div>
-              <div className="border-slate-300 border-r">
-                <img
-                  src=" http://openweathermap.org/img/wn/10d@2x.png"
-                  alt=""
-                  className="m-auto"
-                />
-                <h1 className="font-semibold text-lg  mt-4">22°C</h1>
-                <h2 className="text-gray-600">Final da tarde</h2>
-              </div>
-              <div className="">
-                <img
-                  src=" http://openweathermap.org/img/wn/10d@2x.png"
-                  alt=""
-                  className="m-auto"
-                />
-                <h1 className="font-semibold text-lg  mt-4">22°C</h1>
-                <h2 className="text-gray-600">Noite</h2>
-              </div>
-            </div>
-          </div>
-          <div className="bg-indigo-900 rounded-lg p-4">
-            <div>
-              <h1>Amanhã</h1>
-              <h2>Sexta-feira</h2>
-            </div>
-            <div>
-              <h1 className="font-semibold text-2xl">22°C</h1>
-              <h2>Parcialmente nublado</h2>
-            </div>
-          </div>
+        <div className="mt-8 md:grid md:grid-cols-3 gap-3">
+          <TodayTemperature></TodayTemperature>
+          <TomorrowWeather></TomorrowWeather>
         </div>
       </div>
+      {/* sidebar */}
       <div className="h-full bg-gray-100 py-4 px-8">
         <div className="flex justify-between border-b-2 border-gray-300 pb-6 mb-6">
           <div>
