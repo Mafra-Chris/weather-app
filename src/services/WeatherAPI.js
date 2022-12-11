@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const BASE_URL = 'https://api.openweathermap.org/data/3.0/onecall'
-const KEY = '7cff83efa4a9f7a6338e7e52b9114fbd'
+const KEY = ''
 
 // export default async function getWeather(lat, lon) {
 //   try {
